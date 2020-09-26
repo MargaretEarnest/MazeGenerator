@@ -6,16 +6,16 @@ from cell import Cell
 from wall import Wall
 
 BLACK = (0, 0, 0)
-
+WHITE = (255, 255, 255)
 
 def makeMaze(mazeColumn, mazeRow):
     grid = [[0] * mazeColumn for _ in range(mazeRow)]
     for r in range(0, mazeRow):
         for c in range(0, mazeColumn):
             top, left = Wall(), Wall()
-            if r is not 0:
+            if r != 0:
                 top = grid[r - 1][c].getWalls()[2]
-            if c is not 0:
+            if c != 0:
                 left = grid[r][c - 1].getWalls()[1]
             grid[r][c] = Cell([top, Wall(), Wall(), left])
             for wall in grid[r][c].getWalls():
