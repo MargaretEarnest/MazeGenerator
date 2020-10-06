@@ -44,6 +44,7 @@ def makeMaze(mazeColumn, mazeRow):
     return grid
 
 
+# draws the maze
 def drawMaze(DISPLAYSURF, grid, mazeColumn, mazeRow, pS):
     DISPLAYSURF.fill(WHITE)
     for r in range(0, mazeRow):
